@@ -18,13 +18,22 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        Subir();
+        LimitarQueda();
+    }
+
+    public void Subir()
+    {
         // Pular se eu apertar o espaço
         if (Input.GetKeyDown(KeyCode.Space))
         {
             rb.velocity = Vector2.up * velPulo;
         }
+    }
 
-        // Limitando minha velocidade de queda
+    public void LimitarQueda()
+    {
+        // Limitando minha velocidade de queda caso ela for maior que velPulo
         if (rb.velocity.y < -velPulo)
         {
             rb.velocity = Vector2.down * velPulo;
