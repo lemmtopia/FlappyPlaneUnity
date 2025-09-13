@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -38,5 +39,12 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = Vector2.down * velPulo;
         }
+    }
+
+    // Colisão com os triggers
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // Reiniciando a minha sala
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
