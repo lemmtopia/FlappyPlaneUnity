@@ -4,19 +4,22 @@ using UnityEngine;
 
 public class ObstaculoController : MonoBehaviour
 {
-    [SerializeField] private float velocidade;
-
-    [SerializeField] private GameController game;
+    private float velocidade;
+    private GameController game;
 
     void Start()
     {
         // Encontrando o game controller da cena atual
         game = FindObjectOfType<GameController>();
+
+        velocidade = 4f + game.PegaLevel();
     }
 
     void Update()
     {
-        transform.position += Vector3.left * velocidade * game.PegaLevel() * Time.deltaTime;
+        // Me movendo
+        velocidade = 4f + game.PegaLevel();
+        transform.position += Vector3.left * velocidade * Time.deltaTime;
 
         // Destruindo caso eu sair pela esquerda
         if (transform.position.x < -12)
