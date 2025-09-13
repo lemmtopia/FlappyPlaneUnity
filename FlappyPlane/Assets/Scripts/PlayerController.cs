@@ -23,5 +23,11 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = Vector2.up * velPulo;
         }
+
+        // Limitando minha velocidade de queda
+        if (rb.velocity.y < -velPulo)
+        {
+            rb.velocity = Vector2.down * velPulo;
+        }
     }
 }
