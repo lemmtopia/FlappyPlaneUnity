@@ -32,7 +32,7 @@ public class GameController : MonoBehaviour
     // Pontos
     private float pontos;
 
-    // Níveis
+    // Nível
     private int level = 1;
 
     void Start()
@@ -83,5 +83,10 @@ public class GameController : MonoBehaviour
 
             tempo = Random.Range(minTempoObstaculo, maxTempoObstaculo); // Reiniciando o timer
         }
+    }
+
+    public int PegaLevel()
+    {
+        return level;
     }
 }
