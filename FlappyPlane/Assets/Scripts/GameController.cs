@@ -18,12 +18,27 @@ public class GameController : MonoBehaviour
     // Tempo atual
     private float tempo;
 
+    // Pontos
+    private float pontos;
+
     void Start()
     {
 
     }
 
     void Update()
+    {
+        GanharPontos();
+        CriarObstaculos();
+    }
+
+    private void GanharPontos()
+    {
+        pontos += Time.deltaTime;
+        Debug.Log(Mathf.Round(pontos));
+    }
+
+    private void CriarObstaculos()
     {
         // Diminuindo meu tempo
         tempo -= Time.deltaTime;
@@ -36,7 +51,7 @@ public class GameController : MonoBehaviour
 
             // Criando o obstaculo
             Instantiate(obstaculo, posicaoObstaculo, Quaternion.identity);
-            
+
             tempo = Random.Range(minTempoObstaculo, maxTempoObstaculo); // Reiniciando o timer
         }
     }
