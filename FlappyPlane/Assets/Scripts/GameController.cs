@@ -8,6 +8,13 @@ public class GameController : MonoBehaviour
     // Texto de pontos
     [SerializeField] private Text pontosTexto;
 
+    // Texto de level
+    [SerializeField] private Text levelTexto;
+
+    // Pontos pro próximo level
+    [SerializeField] private float pontosLevel;
+    [SerializeField] private float multPontosLevel;
+
     // Obstaculo
     [SerializeField] private GameObject obstaculo;
 
@@ -25,6 +32,9 @@ public class GameController : MonoBehaviour
     // Pontos
     private float pontos;
 
+    // Níveis
+    private int level = 1;
+
     void Start()
     {
 
@@ -33,6 +43,7 @@ public class GameController : MonoBehaviour
     void Update()
     {
         GanharPontos();
+        GanharLevel();
         CriarObstaculos();
     }
 
@@ -43,6 +54,17 @@ public class GameController : MonoBehaviour
 
         // Atualizar texto
         pontosTexto.text = "Pontos: " + Mathf.Round(pontos).ToString();
+    }
+
+    private void GanharLevel()
+    {
+        if (pontos >= pontosLevel)
+        {
+            level++;
+            pontosLevel *= multPontosLevel;
+        }
+
+        levelTexto.text = level.ToString();
     }
 
     private void CriarObstaculos()
