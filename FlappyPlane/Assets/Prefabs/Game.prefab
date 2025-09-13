@@ -44,4 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41881fdd0744a474b92f480cd1a83ae6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tempoMontanha: 1
+  obstaculo: {fileID: 1535400884826804593, guid: a34bc7b5a3efcc549a4b61c194cee10e, type: 3}
+  tempoObstaculo: 1
