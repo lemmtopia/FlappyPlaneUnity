@@ -45,4 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstaculo: {fileID: 1535400884826804593, guid: a34bc7b5a3efcc549a4b61c194cee10e, type: 3}
-  tempoObstaculo: 1
+  obstaculoMinY: -1.7
+  obstaculoMaxY: 1.7
+  minTempoObstaculo: 2
+  maxTempoObstaculo: 3

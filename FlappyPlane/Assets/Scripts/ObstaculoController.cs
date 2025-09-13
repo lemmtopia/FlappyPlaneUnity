@@ -14,5 +14,10 @@ public class ObstaculoController : MonoBehaviour
     void Update()
     {
         transform.position += Vector3.left * velocidade * Time.deltaTime;
+
+        if (transform.position.x < -12)
+        {
+            Destroy(gameObject);
+        }
     }
 }
