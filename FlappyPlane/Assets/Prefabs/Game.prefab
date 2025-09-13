@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41881fdd0744a474b92f480cd1a83ae6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pontosTexto: {fileID: 5139853651059340293, guid: 20fe7f9fc3870414a9955a488e028462, type: 3}
   obstaculo: {fileID: 1535400884826804593, guid: a34bc7b5a3efcc549a4b61c194cee10e, type: 3}
   obstaculoMinY: -1.7
   obstaculoMaxY: 1.7

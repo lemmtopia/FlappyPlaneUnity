@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
+    // Texto de pontos
+    [SerializeField] private Text pontosTexto;
+
     // Obstaculo
     [SerializeField] private GameObject obstaculo;
 
@@ -34,8 +38,11 @@ public class GameController : MonoBehaviour
 
     private void GanharPontos()
     {
+        // Ganhar pontos
         pontos += Time.deltaTime;
-        Debug.Log(Mathf.Round(pontos));
+
+        // Atualizar texto
+        pontosTexto.text = "Pontos: " + Mathf.Round(pontos).ToString();
     }
 
     private void CriarObstaculos()
