@@ -81,7 +81,7 @@ public class GameController : MonoBehaviour
             // Criando o obstaculo
             Instantiate(obstaculo, posicaoObstaculo, Quaternion.identity);
 
-            tempo = Random.Range(minTempoObstaculo, maxTempoObstaculo); // Reiniciando o timer
+            tempo = Random.Range(minTempoObstaculo / level, maxTempoObstaculo); // Reiniciando o timer
         }
     }
 
