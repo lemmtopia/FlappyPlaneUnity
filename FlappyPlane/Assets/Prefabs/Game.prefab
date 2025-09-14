@@ -48,7 +48,7 @@ MonoBehaviour:
   pontosTexto: {fileID: 5139853651059340293, guid: 20fe7f9fc3870414a9955a488e028462, type: 3}
   levelTexto: {fileID: 0}
   pontosLevel: 15
-  multPontosLevel: 1.8
+  multPontosLevel: 2
   obstaculo: {fileID: 1535400884826804593, guid: a34bc7b5a3efcc549a4b61c194cee10e, type: 3}
   obstaculoMinY: -1.7
   obstaculoMaxY: 1.7
