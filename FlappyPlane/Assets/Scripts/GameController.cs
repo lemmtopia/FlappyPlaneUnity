@@ -26,18 +26,22 @@ public class GameController : MonoBehaviour
     [SerializeField] private float minTempoObstaculo;
     [SerializeField] private float maxTempoObstaculo;
 
+    // Som
+    private AudioSource somLevelUp;
+
     // Tempo atual
     private float tempo;
 
     // Pontos
-    private float pontos;
+    private float pontos = 0;
 
     // Nível
     private int level = 1;
 
     void Start()
     {
-
+        // Pegando meu som do level up
+        somLevelUp = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -60,10 +64,15 @@ public class GameController : MonoBehaviour
     {
         if (pontos >= pontosLevel)
         {
+            // Subindo de nível
             level++;
             pontosLevel *= multPontosLevel;
+
+            // Tocando o meu som
+            somLevelUp.Play();
         }
 
+        // Atualizando o texto de nível
         levelTexto.text = level.ToString();
     }
 
