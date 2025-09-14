@@ -180,7 +180,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08ed3472f8ccea64693e87bf3250077e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puf: {fileID: 1988796796161626344, guid: e46d07d0ff040994ea72bf0aea25c0f8, type: 3}
   velPulo: 5
+  yLimite: 5.5
 --- !u!61 &855598157566553690
 BoxCollider2D:
   m_ObjectHideFlags: 0

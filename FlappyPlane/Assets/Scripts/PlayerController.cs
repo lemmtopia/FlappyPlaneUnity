@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    // Objeto do puf
+    [SerializeField] private GameObject puf;
+
     // Velocidade
     [SerializeField] private float velPulo;
     [SerializeField] private float yLimite = 5.5f;
@@ -32,6 +35,10 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             rb.velocity = Vector2.up * velPulo;
+
+            // Criando meu novo puf
+            GameObject novoPuf = Instantiate(puf, transform.position, Quaternion.identity);
+            Destroy(novoPuf, 1f); // Destruindo o meu puf depois de 1 segundo
         }
     }
 
