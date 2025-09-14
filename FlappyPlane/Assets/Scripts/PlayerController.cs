@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     // Velocidade
     [SerializeField] private float velPulo;
+    [SerializeField] private float yLimite = 5.5f;
 
     // Meu rb
     private Rigidbody2D rb;
@@ -21,6 +22,8 @@ public class PlayerController : MonoBehaviour
     {
         Subir();
         LimitarQueda();
+
+        ChecarBordas();
     }
 
     public void Subir()
@@ -41,8 +44,22 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void ChecarBordas()
+    {
+        if (transform.position.y < -yLimite || transform.position.y > yLimite)
+        {
+            PerdeJogo();
+        }
+    }
+
+
     // Colisão com os triggers
     private void OnTriggerEnter2D(Collider2D collision)
+    {
+        PerdeJogo();
+    }
+
+    private void PerdeJogo()
     {
         // Reiniciando a minha sala
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
